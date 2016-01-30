@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Task 2</title>
+
+    <!-- Styles -->
+<!--    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">-->
+
+    <!-- Scripts -->
+    <!--<script src="js/core.js"></script>-->
+
+</head>
+<body>
+
+<input id="addParagraphBtn" type="button" class="add-paragraph-btn" value="Add Paragraph" />
+
+<script>
+
+    /*
+     *
+     * Задание 2
+     * Создайте страницу с кнопкой, при нажатии по кнопке на странице должен создаваться параграф с произвольным
+     * текстом. После создания 10 параграфов все они должны быть удалены.
+     *
+     * */
+
+    window.onload = function(){
+
+        var count = 0;
+
+        var addElem = function(){
+
+            /*if(count < 10){
+                var p = document.createElement("p");
+                var text = document.createTextNode("Paragraph " + (count + 1));
+
+                p.appendChild(text);
+                document.body.appendChild(p);
+                count++;
+            }else {
+                var p = document.getElementsByTagName("p");
+
+                for (var i = 0; i < p.length; i++)
+                    p[i].remove();
+
+                count = 0;
+            }*/
+
+            if(count == 10){
+
+                var p = document.getElementsByTagName("p");
+                var listLength = p.length;
+
+                for (var i = listLength - 1; i >= 0; i--){
+                    document.body.removeChild(p[i]);
+                }
+
+                count = 0;
+
+            }else {
+
+                var p = document.createElement("p");
+                var text = document.createTextNode("Paragraph " + (count + 1));
+
+                p.appendChild(text);
+                document.body.appendChild(p);
+                count++;
+
+            }
+
+        };
+
+        document.getElementById("addParagraphBtn").addEventListener("click", addElem);
+
+    }
+
+
+</script>
+
+</body>
+</html>

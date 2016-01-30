@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Task 2</title>
+
+    <!-- Styles -->
+<!--    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">-->
+
+    <!-- Scripts -->
+    <!--<script src="js/core.js"></script>-->
+
+</head>
+<body>
+
+<h1>Text</h1>
+<p class="returnedTag">Only</p>
+<p class="returnedTag">Only</p>
+<p class="returnedTag">Only</p>
+<span class="returnedTag">text</span>
+<span>text</span>
+<p>text</p>
+
+<script>
+
+    /*
+     *
+     * Задание 3
+     * Разработайте модуль, который будет содержать функцию для получения элементов на странице с определенным
+     * значением в атрибуте с именем class. Пример использование модуля. var arr = MyQuery.FindClass(“redButton”);
+     * –  возвращает массив элементов с атрибутом class=”redButton”.
+     *
+     * */
+
+    window.onload = function(){
+
+        var getElems = function(className){
+            return document.getElementsByClassName(className);
+        };
+
+        var elems = getElems("returnedTag");
+        console.log(elems);
+
+    }
+
+
+</script>
+
+</body>
+</html>

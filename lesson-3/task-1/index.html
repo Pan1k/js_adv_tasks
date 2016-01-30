@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Task 1</title>
+
+    <!-- Styles -->
+<!--    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">-->
+
+    <!-- Scripts -->
+    <!--<script src="js/core.js"></script>-->
+
+</head>
+<body>
+
+
+<script>
+
+    /*
+     *
+     * Задание 1
+     * Создайте функцию конструктор, которая создает объект со свойством экземпляра, свойством функции-конструктора, с
+     * методом экземпляра и методом функции-конструктора. Имена выберите произвольно..
+     *
+     * */
+
+    function Triangle(line1, line2, line3){
+
+        this.line1 = line1;
+        this.line2 = line2;
+        this.line3 = line3;
+
+        this.getArea = function(){
+            var p = (this.line1 + this.line2 + this.line3) / 2;
+            return Math.sqrt(p * (p - this.line1) * (p - this.line2) * (p - this.line3));
+        };
+
+    }
+
+    var triangle = new Triangle(10, 15, 17);
+
+    document.write("Площадь треугольника со сторонами: " + triangle.line1 + ", " + triangle.line2 + ", " + triangle.line3 + ". равна: " + triangle.getArea());
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Task 1</title>
+
+    <!-- Styles -->
+<!--    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">-->
+
+    <!-- Scripts -->
+    <!--<script src="js/core.js"></script>-->
+
+</head>
+<body>
+
+    <h1>Hello</h1>
+    <h2>Wellome</h2>
+    <p>Text</p>
+    <p>Text 2</p>
+    <a href="javascript:">link</a>
+    <p>Text 3</p>
+    <span>i am span</span>
+    <p>Text 4</p>
+
+
+<script>
+
+    /*
+     *
+     * Задание 1
+     * Разработайте страницу с произвольным количеством HTML элементов. Создайте модуль, который после загрузки
+     * страницы поменяет текст во всех параграфах на PARAGRAPH. Вы должны разработать две версии модуля с
+     * использованием объекта в качестве пространства имен и с использованием анонимной функции.
+     *
+     * */
+
+    window.onload = function(){
+        var p = document.getElementsByTagName("p");
+
+        for(var i = 0; i < p.length; i++)
+            p[i].innerText = "PARAGRAPH";
+    }
+
+
+</script>
+
+</body>
+</html>

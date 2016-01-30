@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Task 4</title>
+
+    <!-- Styles -->
+<!--    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">-->
+
+    <!-- Scripts -->
+    <!--<script src="js/core.js"></script>-->
+
+</head>
+<body>
+
+
+<script>
+
+    /*
+     *
+     * Задание 4
+     * Создайте пример демонстрирующий назначение метода toString().
+     *
+     * */
+
+    function User(name){
+        this.name = name;
+
+        this.x = 5;
+        this.y = 10;
+    };
+
+    var currentDate = new Date();
+    var user = new User("Alexander");
+
+    document.write("Текущая дата: " + currentDate.toString() + "<br />");
+    document.write("Результат x + y: " + user.x.toString() + user.y.toString() + "<br />");
+    document.write("Результат x + y: " + user.x + user.y);
+
+</script>
+
+</body>
+</html>
