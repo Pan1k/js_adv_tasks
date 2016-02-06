@@ -22,33 +22,70 @@
 </head>
 <body>
 
+<p id="timer" style="margin-bottom: 10px">00:00:00</p>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="reset">Reset</button>
 
 <script>
 
     /*
      *
      * Задание 1
-     * Создайте функцию конструктор, которая создает объект со свойством экземпляра, свойством функции-конструктора, с
-     * методом экземпляра и методом функции-конструктора. Имена выберите произвольно..
+     * Разработайте программу секундомер. Секундомер должен иметь три кнопки «Старт», «Стоп», «Сбросить». Секундомер
+     * должен выводить время в формате 00:00:00.
      *
      * */
 
-    function Triangle(line1, line2, line3){
+    var ms = 0, sec = 0, min = 0, timeOut;
 
-        this.line1 = line1;
-        this.line2 = line2;
-        this.line3 = line3;
+    window.onload = function(){
 
-        this.getArea = function(){
-            var p = (this.line1 + this.line2 + this.line3) / 2;
-            return Math.sqrt(p * (p - this.line1) * (p - this.line2) * (p - this.line3));
+        var count = function(){
+
+            ms++;
+            if(ms > 99){
+                sec++;
+                ms = 0;
+                if(sec > 59){
+                    min++;
+                    sec = 0;
+                }
+            }
+
+            setField();
+
         };
 
-    }
+        var setField = function(){
+            var timer = document.getElementById("timer");
+            timer.innerHTML = valueFormat(min) + ":" + valueFormat(sec) + ":" + valueFormat(ms);
+        };
 
-    var triangle = new Triangle(10, 15, 17);
+        var valueFormat = function (val) {
+            return (val < 10) ? "0" + val.toString() : val
+        };
 
-    document.write("Площадь треугольника со сторонами: " + triangle.line1 + ", " + triangle.line2 + ", " + triangle.line3 + ". равна: " + triangle.getArea());
+        document.getElementById("start").onclick = function(){
+            timeOut = setInterval(count, 10);
+            this.disabled = true;
+        };
+
+        document.getElementById("stop").onclick = function(){
+            clearInterval(timeOut);
+            document.getElementById("start").disabled = false;
+        };
+
+        document.getElementById("reset").onclick = function(){
+            ms = 0;
+            sec = 0;
+            min = 0;
+            setField();
+        };
+
+    };
+
 
 
 </script>
